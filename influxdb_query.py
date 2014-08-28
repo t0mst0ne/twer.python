@@ -17,4 +17,7 @@ result = db.query('select last(pending_ward) as ward, DIFFERENCE(pending_ward) a
 
 data = pd.DataFrame(result[0]['points'], columns=result[0]['columns'])
 
-print data
+A = data.ix[data['hospital_sn'] == '0401180014']
+print A
+A[['ward']].plot()
+
