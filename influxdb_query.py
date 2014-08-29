@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#coding:UTF-8
 from influxdb import client as influxdb
 import pandas as pd
 import datetime
@@ -24,4 +26,6 @@ print table.plot()
 
 A = data.ix[data['hospital_sn'] == '0401180014']   # 指定某SN
 A['time'] = [datetime.datetime.fromtimestamp(x).strftime('%Y-%m-%d %H:%M:%S') for x in A['time']]  # 把 timestamp 轉成 datatime
-print A.plot(x='time', y='ward')   # plot 指定一個column 當X , 另一個當Y`
+print A.plot(x='time', y='ward')   # plot 指定一個column 當X , 另一個當Y
+
+
